@@ -1,0 +1,22 @@
+.market {
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 38px;
+
+  span {
+    color: #777;
+  }
+}
+
+.content {
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: 800px 388px;
+}
+
+.conditions {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+}

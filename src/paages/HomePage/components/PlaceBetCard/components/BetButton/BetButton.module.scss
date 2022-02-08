@@ -1,0 +1,11 @@
+.disabled {
+  border-color: #ccc !important;
+  background-color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+.spinner {
+  display: block;
+  width: 16px;
+  margin: 0 auto;
+}

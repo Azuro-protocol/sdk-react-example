@@ -1,0 +1,39 @@
+.smallButtonsRow {
+  display: grid;
+  grid-template-columns: 50px auto;
+  margin-top: 4px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.smallButtons {
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bigButton,
+.smallButton {
+  height: 32px;
+  padding: 8px 0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+
+  &:hover {
+    border-color: #000;
+  }
+}
+
+.bigButton {
+  margin-top: 4px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}

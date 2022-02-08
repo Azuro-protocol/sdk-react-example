@@ -1,0 +1,85 @@
+.condition {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 4px;
+
+  &.active {
+    background-color: #fff2e0;
+    box-shadow: rgba(#000, 0.07) 0 5px 10px;
+  }
+}
+
+.title {
+  margin-right: 4px;
+  font-weight: 600;
+}
+
+.entities {
+  margin: 20px 0;
+}
+
+.entity {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.entityImage {
+  display: block;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.entityTitle {
+
+}
+
+.market {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.smallButtonsRow {
+  display: grid;
+  grid-template-columns: 50px auto;
+  margin-top: 4px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.smallButtons {
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bigButton,
+.smallButton {
+  height: 32px;
+  padding: 8px 0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+
+  &:hover {
+    border-color: #000;
+  }
+}
+
+.bigButton {
+  margin-top: 4px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
