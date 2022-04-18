@@ -17,7 +17,7 @@
     "incremental": true,
     "paths": {
       "web3": [ "local_modules/web3" ],
-      "paages/*": [ "src/paages/*" ],
+      "views/*": [ "src/views/*" ],
       "helpers": [ "src/helpers" ],
       "helpers/*": [ "src/helpers/*" ]
     }

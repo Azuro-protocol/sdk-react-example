@@ -1,1 +1,1 @@
-export { default } from 'paages/HomePage/HomePage'
+export { default } from 'views/HomePage/HomePage'
