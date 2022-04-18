@@ -22,9 +22,9 @@ const Content: React.FC<ContentProps> = ({ games }) => {
 
   return (
     <div>
-      <div className={s.market}>
-        <span>Market:</span> Both Teams To Score
-      </div>
+      {/*<div className={s.market}>*/}
+      {/*  <span>Market:</span> Both Teams To Score*/}
+      {/*</div>*/}
       <div className={s.content}>
         <div className={s.conditions}>
           {

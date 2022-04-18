@@ -10,11 +10,11 @@ import { configure, setSelectedChainId, setWallerProvider } from '@azuro-protoco
 import './app.css'
 
 
-setSelectedChainId(4)
+setSelectedChainId(+process.env.NEXT_PUBLIC_CHAIN_ID)
 
 configure({
-  alchemyKey: '6KpUh1AlP_sMDJZ9PgIqGqAXDyXNsDRZ',
-  infuraKey: '953608e98b6345af8cf956979d4a2e81',
+  rpcUrl: 'https://sokol.poa.network/',
+  ipfsGateway: 'https://ipfs-gateway.azuro.org/ipfs/',
 })
 
 const getWeb3ReactLibrary = (provider: any, connector: any) => {
