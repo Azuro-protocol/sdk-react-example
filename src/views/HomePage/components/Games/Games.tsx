@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { useConnect } from 'web3'
-import { fetchGames } from '@azuro-protocol/sdk'
+import React, { useState } from 'react'
 import type { AzuroGame } from '@azuro-protocol/sdk'
 
-import GameCard from '../Game/Game'
-import PlaceBetCard from '../PlaceBetCard/PlaceBetCard'
+import Game from './components/Game/Game'
+import PlaceBetCard from './components/PlaceBetCard/PlaceBetCard'
 
+import useGames from './utils/useGames'
 import s from './Games.module.scss'
 
 
@@ -36,7 +35,7 @@ const Content: React.FC<ContentProps> = ({ games }) => {
               )
 
               return (
-                <GameCard
+                <Game
                   key={`${game.id}-${game.marketRegistryId}`}
                   data={game}
                   active={isActive}
@@ -56,49 +55,14 @@ const Content: React.FC<ContentProps> = ({ games }) => {
   )
 }
 
-const useFetchGames = () => {
-  const { library } = useConnect()
-  const [ isFetching, setFetching ] = useState(true)
-  const [ games, setGames ] = useState<AzuroGame[]>(null as any)
-
-  const fetch = async () => {
-    try {
-      const games = await fetchGames({
-        filters: {
-          resolved: false,
-          canceled: false,
-        },
-      })
-
-      setFetching(false)
-      setGames(games)
-    }
-    catch (err) {
-      console.error(err)
-      setFetching(false)
-    }
-  }
-
-  useEffect(() => {
-    if (library) {
-      fetch()
-    }
-  }, [ library ])
-
-  return {
-    isFetching,
-    games,
-  }
-}
-
 const Games = () => {
-  const { isFetching, games } = useFetchGames()
+  const { isFetching, games } = useGames()
 
   return (
     <div>
       {
         isFetching ? (
-          <div>Conditions are fetching...</div>
+          <div>Fetching...</div>
         ) : (
           <>
             {

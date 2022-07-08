@@ -3,19 +3,13 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Web3Provider } from '@ethersproject/providers'
 import { Web3ReactProvider } from '@web3-react/core'
+import { setWalletProvider } from '@azuro-protocol/sdk'
 import { MantineProvider, NormalizeCSS, GlobalStyles } from '@mantine/core'
 import { Connector, useConnect } from 'web3'
-import { configure, setSelectedChainId, setWallerProvider } from '@azuro-protocol/sdk'
 
+import './_setupAzuroSDK'
 import './app.css'
 
-
-setSelectedChainId(+process.env.NEXT_PUBLIC_CHAIN_ID)
-
-configure({
-  rpcUrl: 'https://sokol.poa.network/',
-  ipfsGateway: 'https://ipfs-gateway.azuro.org/ipfs/',
-})
 
 const getWeb3ReactLibrary = (provider: any, connector: any) => {
   const lib = new Web3Provider(provider)
@@ -36,7 +30,7 @@ const SDKContractsConnector = () => {
 
   if (library && library !== prevLibrary.current) {
     prevLibrary.current = library
-    setWallerProvider(library)
+    setWalletProvider(library)
   }
 
   return null
