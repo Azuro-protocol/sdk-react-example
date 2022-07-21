@@ -14,7 +14,7 @@
     "typechain-sdk": "typechain --target ethers-v5 --out-dir ./local_modules/sdk/contracts/types './local_modules/sdk/contracts/abis/*.json'"
   },
   "dependencies": {
-    "@azuro-protocol/sdk": "^0.4.1",
+    "@azuro-protocol/sdk": "^0.4.4",
     "@ethersproject/abstract-signer": "^5.5.0",
     "@ethersproject/contracts": "^5.5.0",
     "@ethersproject/providers": "^5.5.3",

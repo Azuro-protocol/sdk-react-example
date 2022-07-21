@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useConnect } from 'web3'
 import { formatUnits } from '@ethersproject/units'
-import { checkTestTokensClaimable, claimTestTokens, fetchBalance, USDT_DECIMALS } from '@azuro-protocol/sdk'
+import { checkTestTokensClaimable, claimTestTokens, fetchBalance } from '@azuro-protocol/sdk'
 
 import s from './Account.module.scss'
 
@@ -20,7 +20,7 @@ const Balance: React.FC<BalanceProps> = ({ account }) => {
   const _fetchBalance = async () => {
     const rawBalance = await fetchBalance(account)
 
-    const balance = parseFloat(parseFloat(formatUnits(rawBalance, USDT_DECIMALS)).toFixed(2))
+    const balance = parseFloat(parseFloat(formatUnits(rawBalance, 18)).toFixed(2))
 
     setBalance(balance)
   }
@@ -28,7 +28,7 @@ const Balance: React.FC<BalanceProps> = ({ account }) => {
   const _fetchClaimable = async () => {
     const isClaimable = await checkTestTokensClaimable(account)
 
-    setClaimable(isClaimable)
+    setClaimable(false)
   }
 
   useEffect(() => {

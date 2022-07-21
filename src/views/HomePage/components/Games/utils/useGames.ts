@@ -16,7 +16,8 @@ const useGames = () => {
           resolved: false,
           canceled: false,
         },
-        from: 26746224, // block number from which we'd like to start fetching data
+        rangeWide: 50000,
+        from: 23235376, // block number from which we'd like to start fetching data
       })
 
       setFetching(false)

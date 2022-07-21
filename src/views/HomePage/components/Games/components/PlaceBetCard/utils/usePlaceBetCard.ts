@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { constants } from 'ethers'
 import { useConnect } from 'web3'
 import { formatUnits } from '@ethersproject/units'
-import { USDT_DECIMALS, fetchAllowance, approve, placeBet } from '@azuro-protocol/sdk'
+import { fetchAllowance, approve, placeBet } from '@azuro-protocol/sdk'
 
 
 const usePlaceBetCard = ({ betAmount }: { betAmount: number }) => {
@@ -19,7 +19,7 @@ const usePlaceBetCard = ({ betAmount }: { betAmount: number }) => {
     setAllowanceFetching(true)
 
     const rawAllowance = await fetchAllowance(account as string)
-    const allowance = parseFloat(formatUnits(rawAllowance, USDT_DECIMALS))
+    const allowance = parseFloat(formatUnits(rawAllowance, 18))
 
     setAllowance(allowance)
     setAllowanceFetching(false)
