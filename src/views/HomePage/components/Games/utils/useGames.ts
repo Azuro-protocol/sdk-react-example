@@ -5,7 +5,6 @@ import type { AzuroGame } from '@azuro-protocol/sdk'
 
 
 const useGames = () => {
-  const { library } = useConnect()
   const [ isFetching, setFetching ] = useState(true)
   const [ games, setGames ] = useState<AzuroGame[]>(null as any)
 
@@ -30,10 +29,8 @@ const useGames = () => {
   }
 
   useEffect(() => {
-    if (library) {
-      fetch()
-    }
-  }, [ library ])
+    fetch()
+  }, [])
 
   return {
     isFetching,
